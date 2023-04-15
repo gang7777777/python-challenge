@@ -16,22 +16,16 @@ csvpath = os.path.join("Resources", "election_data.csv")
 with open(csvpath) as csvfile:
    csvreader = csv.reader(csvfile, delimiter=",")
    
-    # Removing the Header
+   # Removing the Header
    csv_header = next(csvreader)
-   #print(f"CSV Header: {csv_header}")
 
-    # Getting the Net Total of Profit/Loss
+   # Getting the Net Total of Profit/Loss
    for row in csvreader:
       ballotID.append(row[0])
       county.append(row[1])
       candidate.append(row[2])
 
-    # Test print for List
-   #print(ballotID)
-   #print(county)
-   #print(candidate)
-
-    # Getting the Total Votes
+   # Getting the Total Votes
    total_votes = len(list(ballotID))  
 
    # Complete List of Candidates who received votes

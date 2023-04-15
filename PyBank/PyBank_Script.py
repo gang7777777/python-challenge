@@ -8,9 +8,9 @@ dates = []
 difference = []
 change = 0
 initial = 0
+
 # Set path for file
 csvpath = os.path.join("Resources", "budget_data.csv")
-
 
 # Open the CSV
 with open(csvpath) as csvfile:
@@ -31,10 +31,6 @@ with open(csvpath) as csvfile:
         initial = float(row[1])
     del difference[0]
 
-    # Test print for List
-    # print(data)
-    # print(dates)
-
     # Getting the Total Number of Months
     months = len(list(data))
 
@@ -42,13 +38,11 @@ with open(csvpath) as csvfile:
     average = float(sum(difference)/(months-1))
 
     # Getting the Greatest Increase and Date
-
     increase = max(difference)
     increase_index = difference.index(increase)
     increase_date = dates[increase_index+1]
 
     # Getting the Greatest Decrease and Date
-
     decrease = min(difference)
     decrease_index = difference.index(decrease)
     decrease_date = dates[decrease_index+1]
@@ -83,7 +77,7 @@ with open(csvpath) as csvfile:
         csvwriter.writerow([])
         csvwriter.writerow([f"Total: ${net}"])
         csvwriter.writerow([])
-        csvwriter.writerow([f"Average Change: {average:.2f}"])
+        csvwriter.writerow([f"Average Change: ${average:.2f}"])
         csvwriter.writerow([])
         csvwriter.writerow([f"Greatest Increase in Profits: {increase_date} (${increase:.0f})"])
         csvwriter.writerow([])
