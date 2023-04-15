@@ -69,7 +69,7 @@ with open(csvpath) as csvfile:
     print(f"Greatest Decrease in Profits: {decrease_date} (${decrease:.0f})")
 
     # save the output file path
-    output_file = os.path.join("analysis","output.csv")
+    output_file = os.path.join("analysis","output.txt")
 
     with open(output_file, 'w') as csvfile:
 

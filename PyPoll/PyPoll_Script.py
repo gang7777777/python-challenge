@@ -81,7 +81,7 @@ with open(csvpath) as csvfile:
    print("----------------------------")
 
    # save the output file path
-   output_file = os.path.join("analysis","output.csv")
+   output_file = os.path.join("analysis","output.txt")
 
    with open(output_file, 'w') as csvfile:
 
